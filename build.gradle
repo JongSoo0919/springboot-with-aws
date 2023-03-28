@@ -16,13 +16,16 @@ apply plugin: 'io.spring.dependency-management'
 
 group 'com.spirngboot.project'
 version '1.0-SNAPSHOT'
-sourceCompatibility = 1.8
+sourceCompatibility = '11'
 
 repositories {
     mavenCentral()
 }
 
 dependencies {
-    compileOnly('org.springframework.boot:spring-boot-starter-web')
-    testCompileOnly('org.springframework.boot:spring-boot-starter-test')
+    implementation('org.springframework.boot:spring-boot-starter-web')
+
+    compileOnly("org.projectlombok:lombok")
+
+    testImplementation('org.springframework.boot:spring-boot-starter-test')
 }
