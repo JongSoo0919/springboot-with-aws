@@ -1,5 +1,6 @@
 package com.swa.admin.web;
 
+import com.swa.admin.config.auth.LoginUser;
 import com.swa.admin.config.auth.dto.SessionUser;
 import com.swa.admin.service.posts.PostsService;
 import com.swa.admin.web.dto.PostsResponseDto;
@@ -17,12 +18,13 @@ public class IndexController {
     private final PostsService postsService;
     private final HttpSession httpSession;
     @GetMapping("/")
-    public String index(Model model){
+    public String index(Model model, @LoginUser SessionUser user){
         model.addAttribute("posts", postsService.findAllDesc());
-        SessionUser user = (SessionUser) httpSession.getAttribute("user");
+
         if (user != null) {
             model.addAttribute("loginUserName", user.getName());
         }
+
         return "index";
     }
 
