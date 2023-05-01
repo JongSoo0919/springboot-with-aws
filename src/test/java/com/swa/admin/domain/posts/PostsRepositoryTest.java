@@ -6,6 +6,7 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
+import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.test.context.junit4.SpringRunner;
 
@@ -15,7 +16,7 @@ import java.util.List;
 import static org.assertj.core.api.Assertions.*;
 
 @RunWith(SpringRunner.class)
-@DataJpaTest
+@SpringBootTest
 public class PostsRepositoryTest {
     @Autowired
     private PostsRepository postsRepository;
@@ -47,7 +48,7 @@ public class PostsRepositoryTest {
 
     }
 
-//    @Test
+    @Test
     public void BaseTimeEntity_등록(){
         //given
         LocalDateTime now = LocalDateTime.of(2019,6,4,0,0,0);
