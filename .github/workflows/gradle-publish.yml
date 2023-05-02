@@ -1,8 +1,8 @@
 # main.yml의 최상단입니다.
 #새로 추가된 내용입니다. (11) 
 env:  
-  S3_BUCKET_NAME: ward-build 
-  PROJECT_NAME: aws-web-service 
+  S3_BUCKET_NAME: springboot-with-aws-bucket-build 
+  PROJECT_NAME: springboot-with-aws
   
 name: deploy # (0) GitHub Action에서 보여질 이름을 지정합니다. 
 
@@ -69,4 +69,4 @@ jobs:
         aws-region: ap-northeast-2
 
     - name: Upload to S3
-      run: aws s3 cp --region ap-northeast-2 ./$PROJECT_NAME.zip s3://springboot-with-aws-bucket-build/$PROJECT_NAME/$PROJECT_NAME.zip    #(14)
+      run: aws s3 cp --region ap-northeast-2 ./$PROJECT_NAME.zip s3://$BUCKET_NAME/$PROJECT_NAME/$PROJECT_NAME.zip    #(14)
