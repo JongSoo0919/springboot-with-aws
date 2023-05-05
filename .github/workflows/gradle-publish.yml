@@ -3,6 +3,8 @@
 env:  
   S3_BUCKET_NAME: springboot-with-aws-bucket-build 
   PROJECT_NAME: springboot-with-aws
+  CODE_DEPLOY_APP_NAME: springboot-with-aws
+  CODE_DEPLOY_GROUP_NAME: springboot-with-aws-group
   
 name: deploy # (0) GitHub Action에서 보여질 이름을 지정합니다. 
 
