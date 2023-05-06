@@ -12,7 +12,7 @@ ehco "> IDLE_PORT: $IDLE_PORT"
 echo "> curl -s http://localhost:$IDLE_PORT/profile"
 sleep 10
 
-for RETRY_COUNT in{1..10}
+for RETRY_COUNT in {1..10}
 do
   RESPONSE=$(curl -s htpp://localhost:${IDLE_PORT}/profile)
   UP_COUNT=$(echo ${RESPONSE} | grep 'real' | wc -l)
@@ -36,5 +36,5 @@ do
 
   echo "> Health Check 연결 실패. 재시도."
   sleep 10
-  done
+done
 
