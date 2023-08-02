@@ -1,4 +1,6 @@
 ## 스프링부트와 aws로 혼자 구현하는 웹서비스
+### SpringBoot로 만든 웹 애플리케이션을 AWS 서버로 배포
+
 1. 기술스택
   - BackEnd : Java, SpringBoot, JPA
   - FrontEnd : Javascript, Mustache
